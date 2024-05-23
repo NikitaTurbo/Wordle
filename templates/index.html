@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+	<html lang="ru en">
+		<head>
+			<title>Wordle</title>
+			<meta charset="UTF-8">
+			<link rel="icon" href="{{ url_for('static', filename='images/logo.png') }}">
+
+			<script type="text/javascript" src="{{ url_for('static', filename='js') }}/{{ type }}.js"></script> <!-- Script -->
+			<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}"> <!-- StyleSheet -->
+		</head>
+
+		<body>
+			<div class="field show">
+				{% for i in range(quantity) %}
+					<div class="field_row">
+						{% for j in range(5) %} 
+							<input class="field_row_letter" type="text" onkeyup="skip(event, '{{ (5 * i + j + 1) }}');" pattern="^[A-Za-z]{1}$" minlength="1" maxlength="1" tabindex="{{ (5 * i + j + 1) }}" value="{{ word[j] * (type == 'think' and i == 0) }}" required="required" {{ visible }}/>
+						{% endfor %}
+					</div>
+				{% endfor %}
+			</div>
+			<div class="result_form">
+				<p class="result_title"></p>
+				<ul class="result_field"></ul>
+				<p class="result_word">Hidden word:</p>
+				<ul class="result_next">
+					<li>
+						<a class="result_next_a" href="/guess">guess</a>
+					</li>
+					<li>
+						<a class="result_next_a" href="/think">think</a>
+					</li>
+				</ul>
+			</div>
+		</body>
+</html>

@@ -1,0 +1,163 @@
+body {
+	--background-color: #fff;
+	
+	height: 92vh;
+
+	display: flex;
+	text-align: center;
+	align-items: center;
+  justify-content: center;
+
+
+	background-color: var(--background-color);
+
+	&.result {
+		--background-color: #111827;
+	}
+}
+
+/* Field */
+.field {
+	--display: none;
+
+	width: 95%;
+
+	display: var(--display);
+	text-align: center;
+  position: absolute;
+
+	top: 50%;
+	margin: 0;
+
+	-ms-transform: translateY(-50%); /* Safari */
+  transform: translateY(-50%);
+
+	&.show {
+		--display: block;
+	}
+}
+
+.field_row {
+	clear: both;
+}
+
+.field_row_letter {
+	--border-color: #d4d4d4;
+	--background-color: #fff;
+
+	width: 50px;
+	height: 50px;
+
+	text-align: center;
+	text-transform: uppercase;
+
+	margin: 2px 0 0 -2px;
+
+	border: 2px var(--border-color) solid;
+	background-color: var(--background-color);
+
+	&:focus {
+		outline: none;
+
+		--border-color: #737373;
+	}
+	&:first-child {
+		margin: 0;
+	}
+	&.used {
+		color: #fff;
+	}
+
+	&.green {
+		--border-color: #6baa65;
+		--background-color: #6baa65;
+	}
+	&.yellow {
+		--border-color: #c9b457;
+		--background-color: #c9b457;
+	}
+	&.gray {
+		--border-color: #787c7f;
+		--background-color: #787c7f;
+	}
+}
+
+/* Result form */
+.result_form {
+	--display: none;
+
+	width: 258px;
+
+	display: var(--display);
+
+	padding-bottom: 26px;
+
+	border-radius: 12px;
+	background-color: #fff;
+
+	&.show {
+		--display: block;
+	}
+}
+
+.result_title {
+	width: 100%;
+
+	font-size: 16px;
+	font-family: Arial;
+	text-transform: uppercase;
+
+	padding: 2px 0;
+}
+
+.result_field {
+	margin: 0;
+	padding: 0;
+
+	list-style-type: none;
+}
+
+.result_word {
+	width: 100%;
+
+	font-size: 12px;
+	font-family: Arial;
+	text-transform: uppercase;
+
+	padding: 6px 0;
+
+	color: #444444;
+}
+
+.result_next {
+	display: inline-block;
+
+	margin: 0;
+	padding: 4px 0;
+
+	list-style-type: none;
+}
+
+.result_next li {
+	display: inline-block;
+}
+
+.result_next_a {
+	--background-color: #6baa65;
+
+	font-size: 12px;
+	font-family: Arial;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	margin-right: 4px;
+	padding: 12px 20px;
+
+	color: #fff;
+	border-radius: 12px;
+	background-color: var(--background-color);
+
+	&:hover {
+		--background-color: #548950;
+	}
+}
