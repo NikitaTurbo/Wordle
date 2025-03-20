@@ -1,2 +1,1 @@
 # Wordle
-# Wordle
